@@ -1,0 +1,1 @@
+export const API_CLIENT_BASE_URL = "http://localhost:8080/clientApi/1/"
