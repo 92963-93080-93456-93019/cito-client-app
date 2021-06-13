@@ -1,0 +1,6 @@
+{
+
+    "ENGINE_ENDPOINT": "http://127.0.0.1:8081/clientApi/",
+    "CLIENT_ENDPOINT": "http://127.0.0.1:8080/clientApi/"
+  
+}
