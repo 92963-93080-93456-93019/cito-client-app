@@ -6,15 +6,15 @@ import {
 } from "react-router-dom";
 
 import Store from '../pages/store';
-import MyOrders from '../pages/MyOrders';
 import NotFound from '../pages/NotFound';
 import Cart from "../pages/cart";
+import Orders from "../pages/orders";
 
 const Routes = () => {
   return (
     <Router>
         <Switch>
-          <Route path="/myorders" component={MyOrders} />
+          <Route path="/myorders" component={Orders} />
           <Route exact path="/" component={Store}/>
           <Route path="/cart" component={Cart} />
           <Route path="*" component={NotFound} />
