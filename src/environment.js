@@ -1,1 +1,5 @@
-export const API_CLIENT_BASE_URL = "http://localhost:8080/clientApi/1/"
+/*
+* CLIENT ENDPOINT
+*/
+const CLIENT_HOST = "http://cito-client-app.herokuapp.com";
+export const CLIENT_ENDPOINT = CLIENT_HOST + "/clientApi/";

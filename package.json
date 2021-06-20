@@ -1,23 +1,20 @@
 {
-  "name": "cito",
+  "name": "my-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "^4.11.4",
-    "@material-ui/icons": "^4.11.2",
-    "@testing-library/jest-dom": "^5.12.0",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
-    "material-ui-icons": "*",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "bootswatch": "^5.0.1",
     "react": "^17.0.2",
-    "react-basket": "^0.2.1",
     "react-dom": "^17.0.2",
+    "react-geocode": "^0.2.3",
+    "react-helmet-async": "^1.0.9",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
-    "web-vitals": "^1.1.2"
-  },
-  "engines": {
-    "node": "16.x"
+    "sass": "^1.35.1",
+    "web-vitals": "^1.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
