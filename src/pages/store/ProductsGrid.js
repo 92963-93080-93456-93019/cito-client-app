@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import ProductItem from './ProductItem';
 import styles from './ProductsGrid.module.scss';
-import configData from "../../config.json";
+import { CLIENT_ENDPOINT } from '../../environment';
 
 export default class ProductsGrid extends React.Component {
 
@@ -14,7 +14,7 @@ export default class ProductsGrid extends React.Component {
     }
 
     componentDidMount() {
-        const url_get_products = configData.CLIENT_ENDPOINT + '1/products';
+        const url_get_products = CLIENT_ENDPOINT + '1/products';
         fetch(url_get_products)
             .then((response) => response.json())
             .then((json) => {

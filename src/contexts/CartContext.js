@@ -1,6 +1,6 @@
 import React, { createContext, useReducer } from "react";
 import { CartReducer, sumItems } from "./CartReducer";
-import configData from "../config.json";
+import { CLIENT_ENDPOINT } from "../environment";
 
 export const CartContext = createContext();
 
@@ -46,6 +46,8 @@ const CartContextProvider = ({ children }) => {
         userId: 1,
         deliveryAddress: "Rua das Batatas",
         deliverInPerson: true,
+        latitude: 50,
+        longitude: 50
       },
     };
 
@@ -62,7 +64,7 @@ const CartContextProvider = ({ children }) => {
         body: JSON.stringify(payload)
     };
 
-    const url_post_order = configData.ENGINE_ENDPOINT + payload.info.userId + '/order/register?appid=' + payload.info.appid;
+    const url_post_order = CLIENT_ENDPOINT + payload.info.userId + '/orders';
 
     fetch(url_post_order, requestOptions)
         .then(response => response.json())
