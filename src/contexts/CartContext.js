@@ -46,6 +46,8 @@ const CartContextProvider = ({ children }) => {
         userId: 1,
         deliveryAddress: "Rua das Batatas",
         deliverInPerson: true,
+        latitude: 50,
+        longitude: 50
       },
     };
 
