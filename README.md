@@ -1,3 +1,1 @@
-To run:
-´npm install´
-´yarn start´
+#cito-web
