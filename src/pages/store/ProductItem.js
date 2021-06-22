@@ -10,12 +10,6 @@ const ProductItem = ({ product }) => {
     return !!cartItems.find((item) => item.id === product.id);
   };
 
-  const onImgError = (source) => {
-    source.src = "https://www.rxspark.com/images/drug-placeholder.jpg";
-    source.onerror = "";
-    return true;
-  };
-
   return (
     <div className="card card-body">
       <img
@@ -23,7 +17,6 @@ const ProductItem = ({ product }) => {
         className="img-fluid"
         src={product.photo + "?v=" + product.id}
         alt=""
-        onerror="onImgError(this)"
       />
 
       <h4>{product.name}</h4>
