@@ -1,5 +1,6 @@
 /*
-* CLIENT ENDPOINT
-*/
-const CLIENT_HOST = "http://cito-client-app.herokuapp.com";
-export const CLIENT_ENDPOINT = CLIENT_HOST + "/clientApi/";
+ * CLIENT ENDPOINT
+ */
+//const CITO_ENGINE = "https://cito-client.herokuapp.com";
+const CITO_ENGINE = "http://localhost:8080";
+export const CLIENT_ENDPOINT = CITO_ENGINE + "/clientApi/";

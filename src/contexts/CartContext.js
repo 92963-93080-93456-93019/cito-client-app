@@ -47,7 +47,7 @@ const CartContextProvider = ({ children }) => {
         deliveryAddress: "Rua das Batatas",
         deliverInPerson: true,
         latitude: 50,
-        longitude: 50
+        longitude: 50,
       },
     };
 
@@ -55,28 +55,31 @@ const CartContextProvider = ({ children }) => {
       var product_obj = state.cartItems[i];
       var id = product_obj["id"];
       var quantity = product_obj["quantity"];
-      payload.products.push({"id":id,"quantity":quantity});
+      payload.products.push({ id: id, quantity: quantity });
     }
 
     const requestOptions = {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
-        body: JSON.stringify(payload)
+      method: "POST",
+      headers: new Headers({
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+      }),
+      body: JSON.stringify(payload),
     };
 
-    const url_post_order = CLIENT_ENDPOINT + payload.info.userId + '/orders';
+    const url_post_order = CLIENT_ENDPOINT + payload.info.userId + "/orders";
 
     fetch(url_post_order, requestOptions)
-        .then(response => response.json())
-        .then(data => {
-            if (data.code == 201){
-                dispatch({ type: "CHECKOUT_201", msg : "" });
-            } else {
-                dispatch({ type: "CHECKOUT_403", msg : data.message});
-            }
-        });
-
-    
+      .then(function (response) {
+        return response.json();
+      })
+      .then((data) => {
+        if (data.code == 201) {
+          dispatch({ type: "CHECKOUT_201", msg: "" });
+        } else {
+          dispatch({ type: "CHECKOUT_403", msg: data.message });
+        }
+      });
   };
 
   const contextValues = {
