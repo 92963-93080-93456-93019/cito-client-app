@@ -1,6 +1,6 @@
 import React, { createContext, useReducer } from "react";
 import { CartReducer, sumItems } from "./CartReducer";
-import { CLIENT_ENDPOINT } from "../environment";
+import { CLIENT_ENDPOINT_ENGINE } from "../environment";
 
 export const CartContext = createContext();
 
@@ -33,7 +33,8 @@ const CartContextProvider = ({ children }) => {
   };
 
   const clearCart = () => {
-    dispatch({ type: "CLEAR" });
+    localStorage.clear();
+    window.location.reload();
   };
 
   const handleCheckout = () => {
@@ -67,7 +68,11 @@ const CartContextProvider = ({ children }) => {
       body: JSON.stringify(payload),
     };
 
-    const url_post_order = CLIENT_ENDPOINT + payload.info.userId + "/orders";
+    const url_post_order =
+      CLIENT_ENDPOINT_ENGINE +
+      payload.info.userId +
+      "/orders?appid=" +
+      payload.info.appid;
 
     fetch(url_post_order, requestOptions)
       .then(function (response) {
